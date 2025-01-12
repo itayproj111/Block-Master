@@ -19,8 +19,8 @@ public class BoardGame extends View {
     private boolean firsttimeopengame = true, firsttimelost=true,firsttimepickup=true,isBlockTouched = false;
     private ArrayList<Block_Master> blockArrayList;
     private Paint p;
-    private String[] blocksColors = {"Blue", "Red", "Yellow","Green","White","Pink"};
-    private int[] blocksColor = {Color.BLUE, Color.RED, Color.YELLOW,Color.GREEN,Color.WHITE,Color.argb(255,255,182,193)};
+    private String[] blocksColors = {"Blue", "Red", "Yellow","Green","Pink"};
+    private int[] blocksColor = {Color.BLUE, Color.RED, Color.YELLOW,Color.GREEN,Color.argb(255,255,182,193)};
     private Block_Master[] blockarr;
     private int currentPlacementIndex;
     private int totalblocks = 11;
