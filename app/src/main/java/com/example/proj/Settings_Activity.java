@@ -1,5 +1,7 @@
 package com.example.proj;
 
+import static com.example.proj.R.*;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -30,16 +32,16 @@ public class Settings_Activity extends AppCompatActivity implements AdapterView.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_setting);
+        setContentView(layout.activity_setting);
 
-        spinner=findViewById(R.id.spinner);
+        spinner=findViewById(id.spinner);
         spinner.setOnItemSelectedListener(this);
-        linearLayout = findViewById(R.id.activity_settings);
+        linearLayout = findViewById(id.activity_settings);
 
         isPlay = false;
-        btnSong = findViewById(R.id.btnSong);
-        btnSave = findViewById(R.id.btnSave);
-        btnPlay = findViewById(R.id.btnStart);
+        btnSong = findViewById(id.btnSong);
+        btnSave = findViewById(id.btnSave);
+        btnPlay = findViewById(id.btnStart);
         btnPlay.setOnClickListener(this);
         btnSave.setOnClickListener(this);
         btnSong.setOnClickListener(this);
@@ -63,14 +65,14 @@ public class Settings_Activity extends AppCompatActivity implements AdapterView.
             {
                 isPlay = true;
                 btnPlay.setText("Stop");
-                btnSong.setBackgroundResource(R.drawable.stopsong);
+                btnSong.setBackgroundResource(drawable.stopsong);
                 startService(serviceIntent);
             }
             else
             {
                 isPlay = false;
                 btnPlay.setText("Play");
-                btnSong.setBackgroundResource(R.drawable.song);
+                btnSong.setBackgroundResource(drawable.song);
                 stopService(serviceIntent);
             }
         }

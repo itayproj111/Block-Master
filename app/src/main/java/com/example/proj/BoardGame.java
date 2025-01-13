@@ -213,6 +213,7 @@ public class BoardGame extends View {
                 row.add(i);
             }
         }
+        ((Game_Activity)context).updatepoints(line.size(),row.size());
         for (int i = 0; i < line.size(); i++) {
             boardstatus.cleanline(line.get(i));
             cleanline(line.get(i));
@@ -396,17 +397,20 @@ public class BoardGame extends View {
                     boardstatus.changeblockstatus(placei, placej + i, 1);
                     blockArrayList.add(new Block_Master_Square(squares[placei][placej + i].getX(), squares[placei][placej + i].getY(), colorblock, w_h, w_h, 1));
                     blockArrayList.get(blockArrayList.size() - 1).setIsused(true);
+                    ((Game_Activity)context).addonepoint();
                 }
                 if (kind == 2) {
                     boardstatus.changeblockstatus(placei + i, placej, 1);
                     blockArrayList.add(new Block_Master_Square(squares[placei + i][placej].getX(), squares[placei + i][placej].getY(), colorblock, w_h, w_h, 1));
                     blockArrayList.get(blockArrayList.size() - 1).setIsused(true);
+                    ((Game_Activity)context).addonepoint();
                 }
                 if (kind == 3) {
                     for (int j = 0; j < length; j++) {
                         boardstatus.changeblockstatus(placei+i,placej+j,1);
                         blockArrayList.add(new Block_Master_Square(squares[placei + i][placej+j].getX(), squares[placei + i][placej].getY(), colorblock, w_h, w_h, 1));
                         blockArrayList.get(blockArrayList.size() - 1).setIsused(true);
+                        ((Game_Activity)context).addonepoint();
                     }
 
                 }

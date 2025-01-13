@@ -37,6 +37,31 @@ public class Game_Activity extends AppCompatActivity {
     public String getBackgroundColor(){
         return backgroundColor;
     }
+    public void updatepoints(int sumline, int sumrow) {
+        int total= sumline+sumrow;
+        for (int i = 0; i < total; i++) {
+            pointsTotal.updatepoints(this);
+        }
+        if (total==0){
+            pointsTotal.updatecount(this);
+        }
+        else{
+            pointsTotal.resetcount();
+        }
+        updatepointview();
+    }
+    public void addonepoint() {
+        pointsTotal.addonepoint();
+        updatepointview();
+    }
+
+    private void updatepointview() {
+        points.setText("Points: "+pointsTotal.getPoints());
+        if (pointsTotal.getPoints()>=pointsTotal.getBestscore()){
+            pointsTotal.updateBestscore();
+            bestscore.setText("Best Score: "+pointsTotal.getBestscore());
+        }
+    }
 
     public void reset() {
         //BoardGame boardGame = new BoardGame(this);
@@ -85,4 +110,7 @@ public class Game_Activity extends AppCompatActivity {
 
         }
     }
+
+
+
 }
